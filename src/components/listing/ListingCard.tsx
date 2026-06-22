@@ -8,13 +8,14 @@ interface ListingCardProps {
   listing: Listing;
   isFavorite: boolean;
   onToggleFavorite: (id: string) => void;
+  href?: string;
 }
 
-export function ListingCard({ listing, isFavorite, onToggleFavorite }: ListingCardProps) {
+export function ListingCard({ listing, isFavorite, onToggleFavorite, href }: ListingCardProps) {
   const { id, title, location, pricePerNight, rating, reviewCount, imageUrl, badgeLabel } = listing;
 
   return (
-    <Link href={`/rooms/${id}`} className="group block">
+    <Link href={href ?? `/rooms/${id}`} className="group block">
       <div className="relative rounded-2xl overflow-hidden aspect-square mb-3">
         <img
           src={imageUrl}

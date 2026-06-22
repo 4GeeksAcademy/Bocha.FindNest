@@ -34,4 +34,11 @@ export interface Category {
   icon: string;
 }
 
+export interface SearchFilters {
+  destination: string;
+  checkIn: string;
+  checkOut: string;
+  guests: number;
+}
+
 export type SortOrder = 'asc' | 'desc';

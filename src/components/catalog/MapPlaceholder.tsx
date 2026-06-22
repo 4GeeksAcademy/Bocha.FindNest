@@ -1,3 +1,11 @@
+const PINS = [
+  { className: 'top-[20%] left-[30%]', price: 320 },
+  { className: 'top-[45%] left-[55%]', price: 145 },
+  { className: 'top-[60%] left-[25%]', price: 490 },
+  { className: 'top-[30%] left-[70%]', price: 260 },
+  { className: 'top-[70%] left-[65%]', price: 195 },
+];
+
 export function MapPlaceholder() {
   return (
     <div className="relative w-full h-full min-h-[300px] md:min-h-0 rounded-2xl overflow-hidden bg-gray-100 flex flex-col items-center justify-center gap-3 border border-gray-200">
@@ -10,19 +18,12 @@ export function MapPlaceholder() {
         </p>
       </div>
       {/* Decorative dots simulating map pins */}
-      {[
-        { top: '20%', left: '30%' },
-        { top: '45%', left: '55%' },
-        { top: '60%', left: '25%' },
-        { top: '30%', left: '70%' },
-        { top: '70%', left: '65%' },
-      ].map((pos, i) => (
+      {PINS.map((pin, i) => (
         <div
           key={i}
-          className="absolute z-10 bg-white border-2 border-gray-800 rounded-full px-2 py-0.5 text-xs font-semibold shadow-md"
-          style={{ top: pos.top, left: pos.left }}
+          className={`absolute z-10 bg-white border-2 border-gray-800 rounded-full px-2 py-0.5 text-xs font-semibold shadow-md ${pin.className}`}
         >
-          ${[320, 145, 490, 260, 195][i]}
+          ${pin.price}
         </div>
       ))}
     </div>
