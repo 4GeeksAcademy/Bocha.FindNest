@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist);
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--font-geist), Arial, Helvetica, sans-serif;
+}
